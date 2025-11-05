@@ -16,7 +16,7 @@ public class TopicsEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id; //should be same as in repo
     private String title;
     private String subject;
     private boolean complete = false;
