@@ -28,6 +28,13 @@ public class TopicsService {
         repo.save(topicsEntity);
     }
 
+    public void toggleTopic(long id,Boolean complete){
+        TopicsEntity existing = repo.findById(id).orElseThrow();
+        if((existing != null)){
+            existing.setComplete(complete);
+            repo.save(existing);
+        }
+    }
     public void updateTopic(long id,TopicsEntity updatedValue){
         TopicsEntity existing = repo.findById(id).orElseThrow();
         if((existing != null)){
